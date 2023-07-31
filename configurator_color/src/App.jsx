@@ -1,12 +1,11 @@
-//import * as THREE from 'three'
-import React from 'react'
 import { Canvas } from '@react-three/fiber'
-import {} from '@react-three/drei'
 import Experience from './components/Experience'
+import './App.css'
 
 export default function App () {
   return (
     <Canvas>
+      <color attach='background' args={['#15151a']} />
       <Experience />
     </Canvas>
   )
