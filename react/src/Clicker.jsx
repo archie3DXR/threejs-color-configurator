@@ -16,7 +16,6 @@ export default function Clicker() {
       <button onClick={buttonClick}>add 1</button>
       <button onClick={buttonClock}>minus 2</button>
       <button onClick={() => setCount(0)}>reset</button>
-
     </div>
   );
 }
