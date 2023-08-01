@@ -1,8 +1,11 @@
 import "./style.css";
 import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
 
 const root = createRoot(document.querySelector("#root"));
 
-root.render(<h1 style={{ color: "purple" }}>
-  Hello React
-</h1>);
+root.render(
+  <h1>
+    <App />
+  </h1>
+);
