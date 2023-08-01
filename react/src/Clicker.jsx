@@ -1,3 +1,11 @@
+// this code is a counter that counts by 1, minus 2, and resets.
+
+// variables: count
+// functions: buttonClick, buttonClock, buttonReset
+
+// purpose: this code is a counter that counts by 1, minus 2, and resets.
+// context: this code is used in a counter app
+
 import React, { useEffect, useState } from "react"
 
 export default function Clicker() {
