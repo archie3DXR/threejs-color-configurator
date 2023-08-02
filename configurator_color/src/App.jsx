@@ -8,7 +8,7 @@ export default function App() {
 	return (
     <CustomizationProvider>
       <div className="App">
-        <Canvas dpr={[1, 2]}>
+        <Canvas dpr={[1, 2]} shadows>
           <color attach="background" args={["#32363f"]} />
           <fog attach="fog" args={["#32363f", -5, 15]} />
           <Experience />

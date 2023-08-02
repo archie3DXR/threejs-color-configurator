@@ -1,13 +1,14 @@
 import {
 	Stage,
 	PresentationControls,
-	MeshReflectorMaterial,
+	MeshReflectorMaterial
 } from "@react-three/drei"
 
 import Scene from "./Scene"
 
 const Experience = () => {
 	return (
+
 		<PresentationControls
 			speed={1.5}
 			global
@@ -16,13 +17,15 @@ const Experience = () => {
 			rotation={[Math.PI / 8, Math.PI * 0.1, 0]}
 		>
 			<Stage
-				preset="soft"
+				preset="portrait"
 				intensity={1}
-				castShadow={false}
+        shadows="accumulative"
+				castShadow
 			>
 			<Scene/>
 			</Stage>
-			<mesh
+
+      <mesh  receiveShadow
 				rotation={[-Math.PI / 2, 0, 0]}
 				position-y={-0.8}
 			>
