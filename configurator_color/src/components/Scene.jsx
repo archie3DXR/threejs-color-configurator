@@ -16,8 +16,10 @@ import { useCustomization } from "/contexts/Customization.jsx";
 
 const Scene = (props) => {
 	const { nodes, materials } = useGLTF("./assets/scene.gltf")
+  const color = useTexture("public/assets/textures/Metal041A_1K_Color.jpg")
+  const roughness = useTexture("public/assets/textures/Metal041A_1K_Roughness.jpg")
+  const metalness = useTexture("public/assets/textures/Metal041A_1K_Metalness.jpg")
 
-  
 	return (
 		<group
 			{...props}
@@ -26,6 +28,12 @@ const Scene = (props) => {
 			<mesh
 				geometry={nodes.chairlegs_low001_chair1_0.geometry}
 				material={materials.chair1}
+        material-map={color}
+        material-roughness={.5}
+        material-roughnessMap={roughness}
+        material-metalness={.5}
+        material-metalnessMap={metalness}
+
 				position={[1.9, 0.361, 4.027]}
 				rotation={[-Math.PI / 2, 0, -0.776]}
 				scale={0.249}       
