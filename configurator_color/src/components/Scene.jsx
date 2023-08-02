@@ -16,9 +16,10 @@ import { useCustomization } from "/contexts/Customization.jsx";
 
 const Scene = (props) => {
 	const { nodes, materials } = useGLTF("./assets/scene.gltf")
-  const color = useTexture("public/assets/textures/Metal041A_1K_Color.jpg")
-  const roughness = useTexture("public/assets/textures/Metal041A_1K_Roughness.jpg")
-  const metalness = useTexture("public/assets/textures/Metal041A_1K_Metalness.jpg")
+  const color = useTexture("public/assets/textures/Leather033A_1K_Color.jpg")
+  const colorMetal= useTexture("public/assets/textures/Metal041A_1K_Color.jpg")
+  const roughness = useTexture("public/assets/textures/Leather033A_1K_Roughness.jpg")
+  const metalness = useTexture("public/assets/textures/Leather034D_1K_Roughness.jpg")
 
   const {
     material,
@@ -31,18 +32,20 @@ const Scene = (props) => {
   switch (material) {
     case "metal":
       fieldProps = {
-        "material-roughness": 0.5 ,
-        "material-roughnessMap": roughness,
-        "material-metalness":0.5,
-        "material-metalnessMap":metalness        
+        "material-map": colorMetal,
+        "material-roughness": .2 ,
+        "material-roughnessMap": null,
+        "material-metalness":.8,
+        "material-metalnessMap":null  
       }
       break;
     default:
-      fieldProps = {
-        "material-roughness": 0 ,
-        "material-roughnessMap": null,
-        "material-metalness":0,
-        "material-metalnessMap":null            
+      fieldProps = {          
+        "material-map": color,
+        "material-roughness": 1,
+        "material-roughnessMap": roughness,
+        "material-metalness":1,
+        "material-metalnessMap":metalness         
       }
       break;
   }
