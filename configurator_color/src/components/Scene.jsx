@@ -20,6 +20,8 @@ const Scene = (props) => {
   const roughness = useTexture("public/assets/textures/Metal041A_1K_Roughness.jpg")
   const metalness = useTexture("public/assets/textures/Metal041A_1K_Metalness.jpg")
 
+  
+
 	return (
 		<group
 			{...props}
@@ -33,11 +35,13 @@ const Scene = (props) => {
         material-roughnessMap={roughness}
         material-metalness={.5}
         material-metalnessMap={metalness}
-
 				position={[1.9, 0.361, 4.027]}
 				rotation={[-Math.PI / 2, 0, -0.776]}
 				scale={0.249}       
         >
+
+
+
      
       </mesh>
 			<mesh
