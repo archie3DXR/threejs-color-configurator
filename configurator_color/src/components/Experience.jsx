@@ -20,7 +20,7 @@ const Experience = () => {
 				intensity={1}
 				castShadow={false}
 			>
-				<Scene />
+			<Scene/>
 			</Stage>
 			<mesh
 				rotation={[-Math.PI / 2, 0, 0]}

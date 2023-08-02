@@ -14,13 +14,15 @@ const Configurator = () => {
         <div className="configurator__section__values">
           <div
             className={`item ${material === "leather" ? "item--active" : ""}`}
-            onClick={() => setMaterial("leather")}
+            onClick={() => {
+              setMaterial("leather")}}
           >
             <div className="item__label">Leather</div>
           </div>
           <div
             className={`item ${material === "Metal" ? "item--active" : ""}`}
-            onClick={() => setMaterial("Metal")}
+            onClick={() => {
+              setMaterial("metal")}}
           >
             <div className="item__label">Metal</div>
           </div>

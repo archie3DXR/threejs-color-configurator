@@ -20,7 +20,32 @@ const Scene = (props) => {
   const roughness = useTexture("public/assets/textures/Metal041A_1K_Roughness.jpg")
   const metalness = useTexture("public/assets/textures/Metal041A_1K_Metalness.jpg")
 
-  
+  const {
+    material,
+    setMaterial, 
+  } = useCustomization();
+
+  console.log("scene material:", material)
+
+  let fieldProps;
+  switch (material) {
+    case "metal":
+      fieldProps = {
+        "material-roughness": 0.5 ,
+        "material-roughnessMap": roughness,
+        "material-metalness":0.5,
+        "material-metalnessMap":metalness        
+      }
+      break;
+    default:
+      fieldProps = {
+        "material-roughness": 0 ,
+        "material-roughnessMap": null,
+        "material-metalness":0,
+        "material-metalnessMap":null            
+      }
+      break;
+  }
 
 	return (
 		<group
@@ -29,28 +54,21 @@ const Scene = (props) => {
 		>
 			<mesh
 				geometry={nodes.chairlegs_low001_chair1_0.geometry}
-				material={materials.chair1}
-        material-map={color}
-        material-roughness={.5}
-        material-roughnessMap={roughness}
-        material-metalness={.5}
-        material-metalnessMap={metalness}
 				position={[1.9, 0.361, 4.027]}
 				rotation={[-Math.PI / 2, 0, -0.776]}
 				scale={0.249}       
+				material={materials.chair1}
+        {...fieldProps}
         >
-
+      </mesh>
 
 
      
-      </mesh>
 			<mesh
 				geometry={nodes.endtable1_top__low_endtable1_0.geometry}
 				material={materials.endtable1}
 				position={[1, 0.011, 3.795]}
-				rotation={[-Math.PI / 2, 0, 0]}
-        
-                
+				rotation={[-Math.PI / 2, 0, 0]}                
 			/>
 			<mesh
 				geometry={nodes.lampscrew_low001_lamp01_0.geometry}
